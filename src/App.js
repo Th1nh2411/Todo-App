@@ -1,23 +1,17 @@
 import logo from './logo.svg';
-import './App.css';
+import Header from './layout/components/Header/Header';
+import { Route, Routes } from 'react-router';
+import Home from './Pages/HomePage/HomePage';
+import TodoPage from './Pages/TodoPage/TodoPage';
+import DefaultLayout from './layout/DefaultLayout/DefaultLayout';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+                <Route path="/" element={<DefaultLayout><Home/></DefaultLayout>} />
+                <Route path="/todo" element={<DefaultLayout><TodoPage/></DefaultLayout>} />
+      </Routes>
     </div>
   );
 }

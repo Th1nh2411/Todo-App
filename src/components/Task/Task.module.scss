@@ -1,0 +1,42 @@
+.task-item {
+    padding: 10px 25px;
+    border-bottom: 1px solid #cccccc50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .done-btn {
+        background-color: white;
+        padding: 2px 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: 0.1s all ease-in-out;
+        display: flex;
+        align-items: center;
+        &:hover {
+            color: #35b4ac;
+            cursor: pointer;
+            border: 1px solid #35b4ac;
+        }
+    }
+    .loading {
+        animation: slideIn 0.3s linear, spinner 1s linear infinite;
+        margin-right: 8px;
+        transition: 0.3s all ease-in-out;
+    }
+}
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

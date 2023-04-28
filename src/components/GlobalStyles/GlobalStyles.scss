@@ -1,0 +1,30 @@
+@import 'normalize.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+html body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-y: overlay;
+}
+// Scroll bar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.459);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
