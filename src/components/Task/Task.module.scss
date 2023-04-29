@@ -4,6 +4,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .task-title {
+        display: flex;
+        align-items: center;
+        .task-icon {
+            margin-right: 8px;
+            color: #35b4ac;
+        }
+        .not-done {
+            color: #ffc800;
+        }
+    }
     .done-btn {
         background-color: white;
         padding: 2px 8px;
@@ -12,17 +23,27 @@
         transition: 0.1s all ease-in-out;
         display: flex;
         align-items: center;
+        font-size: 1.4rem;
+
         &:hover {
             color: #35b4ac;
-            cursor: pointer;
             border: 1px solid #35b4ac;
+            cursor: pointer;
+        }
+        &:active {
+            color: #5694c0;
+            border: 1px solid #5694c0;
         }
     }
-    .loading {
-        animation: slideIn 0.3s linear, spinner 1s linear infinite;
+    .loader {
+        animation: slideIn 0.3s, spinner 1s infinite;
         margin-right: 8px;
         transition: 0.3s all ease-in-out;
     }
+}
+.done-btn.loading {
+    border: 1px solid #949494;
+    color: #949494;
 }
 @keyframes spinner {
     from {
@@ -34,9 +55,11 @@
 }
 @keyframes slideIn {
     from {
-        transform: translateY(-50%);
+        opacity: 0.5;
+        transform: translateX(20px);
     }
     to {
-        transform: translateY(0);
+        opacity: 1;
+        transform: translateX(0);
     }
 }
